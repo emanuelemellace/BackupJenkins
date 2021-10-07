@@ -1,8 +1,8 @@
 pipeline { 
     agent any;
     parameters {
-        string(name: 'BRANCH', defaultValue: 'master')
-        credentials(name: 'GIT_CRED', defaultValue: 'GIT_CREDENTIALS', credentialType: 'Username with password', description: 'bitbucket.nexicloud.it credentials')
+        string(name: 'BRANCH', defaultValue: 'main')
+        credentials(name: 'GIT_CRED', defaultValue: 'GIT_CREDENTIALS', credentialType: 'Username with password', description: 'credentials')
         string(name: 'PROJECT_GIT_URL', defaultValue: '...')
     }
     stages {
