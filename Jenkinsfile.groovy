@@ -33,7 +33,7 @@ pipeline {
                 """
                 script {
 		    LATEST_BACKUP_FOLDER = sh (
-			    script: 'ls -t | head -n1',
+			    script: 'cd $JENKINS_HOME/backup/ && ls -t | head -n1',
 		    	    returnStdout: true
 		    ).trim()
                 }
