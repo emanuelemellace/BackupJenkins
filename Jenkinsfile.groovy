@@ -27,6 +27,11 @@ pipeline {
         }
         stage("BACKUP"){ 
             steps{
+		sh """#!/bin/bash
+                cd $JENKINS_HOME/backup/
+		ls
+                "
+                """
                 script {
 		    LATEST_BACKUP_FOLDER = sh (
 			    scripts: 'ls -t | head -n1',
@@ -34,7 +39,7 @@ pipeline {
 		    ).trim()
                 }
                 sh """#!/bin/bash
-                cd $JENKINS_HOME/backup/${LATEST_BACKUP_FOLDER}
+                cd ${LATEST_BACKUP_FOLDER}
 		ls
                 "
                 """
