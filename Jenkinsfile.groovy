@@ -38,6 +38,7 @@ pipeline {
 		    ).trim()
                 }
                 sh """#!/bin/bash
+		echo ${LATEST_BACKUP_FOLDER}
                 cd ${LATEST_BACKUP_FOLDER}
 		ls
                 """
