@@ -34,6 +34,8 @@ pipeline {
                 cd $JENKINS_HOME/backup
 		pwd
 		ls
+		echo "DATETIME ${DATETIME_TAG}" 
+		echo "DATE_TAG ${DATE_TAG}" 
                 "
                 """
             }
