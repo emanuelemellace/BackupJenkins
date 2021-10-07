@@ -34,7 +34,7 @@ pipeline {
                 """
                 script {
 		    LATEST_BACKUP_FOLDER = sh (
-			    scripts: 'ls -t | head -n1',
+			    script: 'ls -t | head -n1',
 		    	    returnStdout: true
 		    ).trim()
                 }
