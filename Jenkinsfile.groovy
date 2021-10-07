@@ -14,8 +14,8 @@ pipeline {
                 branches: [[name: params.BRANCH]],
                 doGenerateSubmoduleConfigurations: false,
                 extensions: [[
-                $class: 'RelativeTargetDirectory',
-                relativeTargetDir: 'jenkins-backup']],
+                $class: 'RelativeTargetDirectory'
+		]],
                 submoduleCfg: [],
                 userRemoteConfigs: [
                     [ credentialsId: params.GIT_CRED,
