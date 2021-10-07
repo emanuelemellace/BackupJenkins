@@ -39,7 +39,7 @@ pipeline {
                 }
                 sh """#!/bin/bash
 		echo ${LATEST_BACKUP_FOLDER}
-                cd ${LATEST_BACKUP_FOLDER}
+                cd $JENKINS_HOME/backup/${LATEST_BACKUP_FOLDER}
 		ls
                 """
             }
