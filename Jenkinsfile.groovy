@@ -31,8 +31,9 @@ pipeline {
                     DATETIME_TAG = java.time.LocalDateTime.now()
                 }
                 sh """#!/bin/bash
-                cd $JENKINS_HOME
-				pwd
+                cd $JENKINS_HOME/backup
+		pwd
+		ls
                 "
                 """
             }
