@@ -38,7 +38,7 @@ pipeline {
         stage("Push"){
 		steps{
 			withCredentials([usernamePassword(credentialsId:git_mellace, usernameVariable:'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
-                		sh "git remote set-url origin https://${GIT_USERNAME}:${GIT_PASSWORD}@${params.BRANCH]}"
+                		sh "git remote set-url origin https://${GIT_USERNAME}:${GIT_PASSWORD}@${params.PROJECT_GIT_URL]}"
                 		sh 'git push origin'
 				echo "backup done"
 			}
