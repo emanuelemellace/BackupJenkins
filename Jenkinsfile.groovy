@@ -37,9 +37,8 @@ pipeline {
         } 
         stage("Push"){
 		steps{
-			String[] repo_name = params.PROJECT_GIT_URL.split('@');
 			withCredentials([usernamePassword(credentialsId:git_mellace, usernameVariable:'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
-                		sh "git remote set-url origin https://${GIT_USERNAME}:${GIT_PASSWORD}@${repo_name[1]}"
+                		sh "git remote set-url origin https://${GIT_USERNAME}:${GIT_PASSWORD}@${params.BRANCH]}"
                 		sh 'git push origin'
 				echo "backup done"
 			}
