@@ -7,22 +7,17 @@ pipeline {
 	
     }
     stages {
-        stage('Checkout') {
-            steps{
-                checkout([
-                $class: 'GitSCM',
+	    
+	stage('Checkout project') {
+            steps {
+                cleanWs(deleteDirs: true, disableDeferredWipeout: true)
+                checkout([$class: 'GitSCM',
                 branches: [[name: params.BRANCH]],
-                doGenerateSubmoduleConfigurations: false,
-                extensions: [[
-                $class: 'RelativeTargetDirectory'
-		]],
-                submoduleCfg: [],
-                userRemoteConfigs: [
-                    [ credentialsId: params.GIT_CRED,
-                    url: params.PROJECT_GIT_URL]
-                ]            
-                ]);
- 
+                gitTool: 'git',
+                userRemoteConfigs: [[
+                    credentialsId: params.GIT_CRED,
+                    url: params.PROJECT_GIT_URL
+                ]]])
             }
         }
         stage("BACKUP"){ 
