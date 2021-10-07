@@ -27,11 +27,8 @@ pipeline {
         }
         stage("BACKUP"){ 
             steps{
-		sh """#!/bin/bash
-                cd $JENKINS_HOME/backup/
-		ls
-                """
                 script {
+		    DATETIME_TAG = java.time.LocalDateTime.now()
 		    LATEST_BACKUP_FOLDER = sh (
 			    script: 'cd $JENKINS_HOME/backup/ && ls -t | head -n1',
 		    	    returnStdout: true
@@ -40,7 +37,9 @@ pipeline {
                 sh """#!/bin/bash
 		echo ${LATEST_BACKUP_FOLDER}
                 cd $JENKINS_HOME/backup/${LATEST_BACKUP_FOLDER}
-		ls
+		
+		git add --all
+                git commit -m "Backup ${DATETIME_TAG}"
                 """
             }
         } 
