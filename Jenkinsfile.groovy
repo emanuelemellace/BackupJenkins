@@ -4,7 +4,7 @@ pipeline {
         string(name: 'BRANCH', defaultValue: 'main')
         credentials(name: 'GIT_CRED', defaultValue: 'GIT_CREDENTIALS', credentialType: 'Username with password', description: 'credentials')
         string(name: 'PROJECT_GIT_URL', defaultValue: '...')
-	text(name: 'LATEST_BACKUP_FOLDER', defaultValue: 'One\nTwo\nThree\n', description: '')
+	
     }
     stages {
         stage('Checkout') {
