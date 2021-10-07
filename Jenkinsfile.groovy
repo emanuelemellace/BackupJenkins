@@ -31,16 +31,19 @@ pipeline {
                 }
                 sh """#!/bin/bash
 		echo ${LATEST_BACKUP_FOLDER}
-                cd $JENKINS_HOME/backup/${LATEST_BACKUP_FOLDER}
+		cp -r $JENKINS_HOME/backup/${LATEST_BACKUP_FOLDER}/* .
                 """
             }
         } 
         stage("Push"){
 		steps{
-			withCredentials([usernamePassword(credentialsId:git_mellace, usernameVariable:'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
-                		sh "git remote set-url origin https://${GIT_USERNAME}:${GIT_PASSWORD}@${params.PROJECT_GIT_URL}"
-                		sh 'git push origin'
-				echo "backup done"
+			withCredentials([usernamePassword(credentialsId:GIT_CRED, usernameVariable:'GIT_USERNAME', passwordVariable: 'GIT_TOKEN')]) {
+			    sh("git config user.email emanuele.mellace97@gmail.com")
+                	    sh("git config user.name $GIT_USERNAME")
+			    sh("git add .")
+			    sh('git commit -m "Backup ${DATETIME_TAG}"')
+			    sh("git push http://$GIT_USERNAME:$GIT_TOKEN@github.com/emanuelemellace/BackupJenkins.git HEAD:main")
+			     echo "backup done"
 			}
 		}
 	} 
