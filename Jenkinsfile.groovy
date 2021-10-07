@@ -3,7 +3,7 @@ pipeline {
     parameters {
         string(name: 'BRANCH', defaultValue: 'main')
         credentials(name: 'GIT_CRED', defaultValue: 'GIT_CREDENTIALS', credentialType: 'Username with password', description: 'credentials')
-        string(name: 'PROJECT_GIT_URL', defaultValue: '...')
+        string(name: 'PROJECT_GIT_URL', defaultValue: 'https://github.com/emanuelemellace/BackupJenkins.git')
 	
     }
     stages {
