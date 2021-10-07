@@ -30,7 +30,6 @@ pipeline {
 		sh """#!/bin/bash
                 cd $JENKINS_HOME/backup/
 		ls
-                "
                 """
                 script {
 		    LATEST_BACKUP_FOLDER = sh (
@@ -41,7 +40,6 @@ pipeline {
                 sh """#!/bin/bash
                 cd ${LATEST_BACKUP_FOLDER}
 		ls
-                "
                 """
             }
         } 
