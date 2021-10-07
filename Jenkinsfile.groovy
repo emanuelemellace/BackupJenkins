@@ -29,7 +29,7 @@ pipeline {
             steps{
                 script {
 		    LATEST_BACKUP_FOLDER = sh (
-			    scrtips: 'ls -t | head -n1',
+			    scripts: 'ls -t | head -n1',
 		    	    returnStdout: true
 		    ).trim()
                 }
