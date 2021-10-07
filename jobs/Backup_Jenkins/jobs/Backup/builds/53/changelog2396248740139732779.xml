@@ -1,0 +1,36 @@
+commit b0d9457eab7b31c02950f29607beaa8b592c054a
+tree 46fd79bb2a86ee3f337a698f286e49c5e596aaef
+parent a2a78b2134ea6ced24a9a65f6d0656585380a244
+author Emanuele Mellace <60271233+emanuelemellace@users.noreply.github.com> 2021-10-07 15:33:02 +0200
+committer GitHub <noreply@github.com> 2021-10-07 15:33:02 +0200
+
+    Update Jenkinsfile.groovy
+
+:100644 100644 d01ba1d2cd1c0e8f3bdca5385027ac4fb278031b 5f3805e48c0149e00f8447751771f4091f3ae961 M	Jenkinsfile.groovy
+commit a2a78b2134ea6ced24a9a65f6d0656585380a244
+tree de61041daa21f97711aec8592577cf23ce2f3c41
+parent 334bdcd57ceb54f26d0e0f7a7966d9acb636f775
+author Emanuele Mellace <60271233+emanuelemellace@users.noreply.github.com> 2021-10-07 15:32:05 +0200
+committer GitHub <noreply@github.com> 2021-10-07 15:32:05 +0200
+
+    UPDATE v1.12312312
+
+:100644 100644 2190e9b21ccf810d3a8d2e5fc6d0db928c03727d d01ba1d2cd1c0e8f3bdca5385027ac4fb278031b M	Jenkinsfile.groovy
+commit 334bdcd57ceb54f26d0e0f7a7966d9acb636f775
+tree c03d29b8bdeec9656ae8401f8696dab1b11b1f6a
+parent c5bf902951c52e193fe86dde7f052601a7857f06
+author Emanuele Mellace <60271233+emanuelemellace@users.noreply.github.com> 2021-10-07 15:29:57 +0200
+committer GitHub <noreply@github.com> 2021-10-07 15:29:57 +0200
+
+    Update
+
+:100644 100644 f5fb792329be4c1a7237304d559ceee4c47a4831 2190e9b21ccf810d3a8d2e5fc6d0db928c03727d M	Jenkinsfile.groovy
+commit c5bf902951c52e193fe86dde7f052601a7857f06
+tree ea009694e0340623fee0c29b3872790f72762e18
+parent a86babfebb86f7f56d24c44119fc7fa6ef84adf9
+author Emanuele Mellace <60271233+emanuelemellace@users.noreply.github.com> 2021-10-07 15:23:57 +0200
+committer GitHub <noreply@github.com> 2021-10-07 15:23:57 +0200
+
+    Update Jenkinsfile.groovy
+
+:100644 100644 22c4db9bdac9ec195970aeaa3a151c2af93c2136 f5fb792329be4c1a7237304d559ceee4c47a4831 M	Jenkinsfile.groovy
