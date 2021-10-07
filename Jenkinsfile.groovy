@@ -8,7 +8,7 @@ pipeline {
     }
     stages {
 	    
-	stage('Checkout project') {
+	stage('Checkout') {
             steps {
                 cleanWs(deleteDirs: true, disableDeferredWipeout: true)
                 checkout([$class: 'GitSCM',
@@ -20,7 +20,7 @@ pipeline {
                 ]]])
             }
         }
-        stage("BACKUP"){ 
+        stage("Move on folder and Commit"){ 
             steps{
                 script {
 		    DATETIME_TAG = java.time.LocalDateTime.now()
@@ -32,8 +32,6 @@ pipeline {
                 sh """#!/bin/bash
 		echo ${LATEST_BACKUP_FOLDER}
                 cd $JENKINS_HOME/backup/${LATEST_BACKUP_FOLDER}
-		
-		git add --all
                 git commit -m "Backup ${DATETIME_TAG}"
                 """
             }
