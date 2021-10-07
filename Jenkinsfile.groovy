@@ -4,6 +4,7 @@ pipeline {
         string(name: 'BRANCH', defaultValue: 'main')
         credentials(name: 'GIT_CRED', defaultValue: 'GIT_CREDENTIALS', credentialType: 'Username with password', description: 'credentials')
         string(name: 'PROJECT_GIT_URL', defaultValue: '...')
+	text(name: 'LATEST_BACKUP_FOLDER', defaultValue: 'One\nTwo\nThree\n', description: '')
     }
     stages {
         stage('Checkout') {
@@ -27,15 +28,14 @@ pipeline {
         stage("BACKUP"){ 
             steps{
                 script {
-                    DATE_TAG = java.time.LocalDate.now()
-                    DATETIME_TAG = java.time.LocalDateTime.now()
+		    LATEST_BACKUP_FOLDER = sh (
+			    scrtips: 'ls -t | head -n1',
+		    	    returnStdout: true
+		    ).trim()
                 }
                 sh """#!/bin/bash
-                cd $JENKINS_HOME/backup
-		pwd
+                cd $JENKINS_HOME/backup/${LATEST_BACKUP_FOLDER}
 		ls
-		echo "DATETIME ${DATETIME_TAG}" 
-		echo "DATE_TAG ${DATE_TAG}" 
                 "
                 """
             }
