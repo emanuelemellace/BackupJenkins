@@ -48,4 +48,15 @@ pipeline {
 		}
 	} 
     }
+	post {
+		always {
+			cleanWs(deleteDirs: true, disableDeferredWipeout: true)
+			}
+		success {
+			echo '*********************** BACKUP DONE !**********************'
+			}
+		failure {
+			echo '************************* FAILED ********************* '
+			}
+	}
 }
